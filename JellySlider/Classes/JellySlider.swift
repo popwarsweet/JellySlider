@@ -250,7 +250,7 @@ public class JellySlider: UIView {
     // MARK: - Particles
     
     /// Sprite Kit particle shown after bubble dips back down into the track.
-    let particle: SKEmitterNode = {
+    private let particle: SKEmitterNode = {
         // we have to load everything from JellySlider bundle since we're now in a framework
         let podBundle = NSBundle(forClass: JellySlider.self)
         let bundleURL = podBundle.URLForResource("JellySlider", withExtension: "bundle")
