@@ -123,7 +123,7 @@ public class JellySlider: UIView {
     
     // MARK: - Init
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         // add sprite kit
         skView.frame = bounds
@@ -250,14 +250,26 @@ public class JellySlider: UIView {
     // MARK: - Particles
     
     /// Sprite Kit particle shown after bubble dips back down into the track.
-    private func splashParticle(center: CGPoint, color: UIColor) -> SKEmitterNode {
-        let particle = SKEmitterNode(fileNamed: "SplashParticle")!
-        particle.particleColor = color
+    let particle: SKEmitterNode = {
+        // we have to load everything from JellySlider bundle since we're now in a framework
+        let podBundle = NSBundle(forClass: JellySlider.self)
+        let bundleURL = podBundle.URLForResource("JellySlider", withExtension: "bundle")
+        let bundle = NSBundle(URL: bundleURL!)!
+        let particlePath = bundle.pathForResource("SplashParticle", ofType: "sks")!
+        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(particlePath) as! SKEmitterNode
+        let particleImage = UIImage(named: "spark.png", inBundle: bundle, compatibleWithTraitCollection: nil)!
+        particle.particleTexture = SKTexture(image: particleImage)
         particle.particleColorBlendFactor = 1
         particle.particleColorSequence = nil
         particle.numParticlesToEmit = 4
-        particle.position = center
         return particle
+    }()
+    
+    private func splashParticle(center: CGPoint, color: UIColor) -> SKEmitterNode {
+        let particleCopy = particle.copy() as! SKEmitterNode
+        particleCopy.particleColor = color
+        particleCopy.position = center
+        return particleCopy
     }
     
     

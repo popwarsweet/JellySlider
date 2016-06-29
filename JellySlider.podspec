@@ -32,9 +32,9 @@ A UISlider replacement made of jelly. Written in Swift (2.2.1)
 
   s.source_files = 'JellySlider/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'JellySlider' => ['JellySlider/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'JellySlider' => ['JellySlider/Assets/*']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
