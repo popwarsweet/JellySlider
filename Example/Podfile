@@ -4,8 +4,5 @@ target 'JellySlider_Example' do
   pod 'JellySlider', :path => '../'
 
   target 'JellySlider_Tests' do
-    inherit! :search_paths
-
-    
   end
 end
