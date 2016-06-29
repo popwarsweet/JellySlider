@@ -1,6 +1,6 @@
 # JellySlider
 
-[![CI Status](http://img.shields.io/travis/Kyle Zaragoza/JellySlider.svg?style=flat)](https://travis-ci.org/Kyle Zaragoza/JellySlider)
+[![CI Status](http://img.shields.io/travis/popwarsweet/JellySlider.svg?style=flat)](https://travis-ci.org/popwarsweet/JellySlider)
 [![Version](https://img.shields.io/cocoapods/v/JellySlider.svg?style=flat)](http://cocoapods.org/pods/JellySlider)
 [![License](https://img.shields.io/cocoapods/l/JellySlider.svg?style=flat)](http://cocoapods.org/pods/JellySlider)
 [![Platform](https://img.shields.io/cocoapods/p/JellySlider.svg?style=flat)](http://cocoapods.org/pods/JellySlider)
