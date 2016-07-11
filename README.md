@@ -8,7 +8,7 @@
 A fun replacement for UISlider. The slider uses bezier paths within a CAShapeLayer for the track and slider knob, Sprite Kit for particles, and force touch for expanding the knob when force on the screen changes.
 
 ## Demo
-<img src="https://github.com/popwarsweet/JellySlider/blob/master/demo.gif" width="375">
+<img src="https://github.com/popwarsweet/JellySlider/blob/master/demo.gif" width="600">
 
 ## Example
 
